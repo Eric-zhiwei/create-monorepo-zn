@@ -1,6 +1,6 @@
 {
   "name": "create-monorepo-zn",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Quickly create the directory structure for a monorepo project, built-in eslintconfig, stylelintconfig, tsconfig, husky, lint-staged",
   "keywords": [
     "monorepo",
