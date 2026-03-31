@@ -1,6 +1,6 @@
 {
   "name": "create-monorepo-zn",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Quickly create the directory structure for a monorepo project, built-in eslintconfig, stylelintconfig, tsconfig, husky, lint-staged",
   "keywords": [
     "monorepo",
@@ -26,7 +26,7 @@
     "index.js"
   ],
   "scripts": {
-    "release": "standard-version && npm publish",
+    "release": "standard-version && npm publish --registry=https://registry.npmjs.org/",
     "postrelease": "git push --follow-tags origin main"
   },
   "dependencies": {
