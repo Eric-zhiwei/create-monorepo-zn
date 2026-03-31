@@ -10,20 +10,30 @@
     "husky",
     "lint-staged"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eric-zhiwei/create-monorepo-zn.git"
+  },
   "license": "MIT",
   "author": "zhining",
   "type": "commonjs",
   "main": "index.js",
   "bin": {
-    "create-zn-monorepo": "index.js"
+    "create-monorepo-zn": "index.js"
   },
   "files": [
     "templates",
     "index.js"
   ],
-  "scripts": {},
+  "scripts": {
+    "release": "standard-version && npm publish",
+    "postrelease": "git push --follow-tags origin main"
+  },
   "dependencies": {
     "fs-extra": "^11.3.4",
     "inquirer": "^13.3.2"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
   }
 }
