@@ -1,0 +1,29 @@
+{
+  "name": "create-monorepo-zn",
+  "version": "0.0.1",
+  "description": "Quickly create the directory structure for a monorepo project, built-in eslintconfig, stylelintconfig, tsconfig, husky, lint-staged",
+  "keywords": [
+    "monorepo",
+    "eslint",
+    "stylelint",
+    "typeScript",
+    "husky",
+    "lint-staged"
+  ],
+  "license": "MIT",
+  "author": "zhining",
+  "type": "commonjs",
+  "main": "index.js",
+  "bin": {
+    "create-zn-monorepo": "index.js"
+  },
+  "files": [
+    "templates",
+    "index.js"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "fs-extra": "^11.3.4",
+    "inquirer": "^13.3.2"
+  }
+}
