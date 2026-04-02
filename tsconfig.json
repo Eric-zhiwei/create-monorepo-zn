@@ -1,0 +1,46 @@
+{
+  // TypeScript 编译器的核心配置。
+  "compilerOptions": {
+    // 编译后的 JavaScript 目标版本。
+    "target": "ES2020",
+
+    // 输出 CommonJS，适合当前这个 Node CLI 包。
+    "module": "CommonJS",
+
+    // 使用 Node 的模块解析规则查找依赖。
+    "moduleResolution": "Node",
+
+    // 告诉 TS 代码运行时可用的标准库能力。
+    "lib": ["ES2020"],
+
+    // 指定源码根目录，方便保持输出目录结构稳定。
+    "rootDir": "src",
+
+    // 编译产物输出到 dist。
+    "outDir": "dist",
+
+    // 允许更自然地导入 CommonJS 模块。
+    "esModuleInterop": true,
+
+    // 强制文件路径大小写一致，避免跨平台问题。
+    "forceConsistentCasingInFileNames": true,
+
+    // 开启严格模式，尽量在编译期发现类型问题。
+    "strict": true,
+
+    // 跳过第三方声明文件检查，加快类型检查速度。
+    "skipLibCheck": true,
+
+    // 允许导入 JSON 文件。
+    "resolveJsonModule": true,
+
+    // 显式引入 Node 的类型声明，如 process、__dirname 等。
+    "types": ["node"]
+  },
+
+  // 这些文件会参与类型检查。
+  "include": ["src/**/*.ts", "tsup.config.ts"],
+
+  // 这些目录不会参与编译或类型检查。
+  "exclude": ["dist", "node_modules"]
+}

@@ -17,15 +17,28 @@
   "license": "MIT",
   "author": "zhining",
   "type": "commonjs",
-  "main": "index.js",
+  "packageManager": "pnpm@10",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "bin": {
-    "create-monorepo-zn": "index.js"
+    "create-monorepo-zn": "dist/index.js"
   },
   "files": [
     "templates",
-    "index.js"
+    "dist"
   ],
   "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "pnpm run clean && pnpm run typecheck && tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
     "release": "standard-version && npm publish --registry=https://registry.npmjs.org/",
     "postrelease": "git push --follow-tags origin main"
   },
@@ -34,6 +47,11 @@
     "inquirer": "^13.3.2"
   },
   "devDependencies": {
-    "standard-version": "^9.5.0"
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.6.0",
+    "rimraf": "^6.0.1",
+    "standard-version": "^9.5.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
   }
 }
