@@ -35,6 +35,12 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
+    "lint": "pnpm run lint:eslint && pnpm run format:check",
+    "lint:eslint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "pnpm run clean && pnpm run typecheck && tsup",
     "dev": "tsup --watch",
@@ -42,16 +48,33 @@
     "release": "standard-version && npm publish --registry=https://registry.npmjs.org/",
     "postrelease": "git push --follow-tags origin main"
   },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "fs-extra": "^11.3.4",
     "inquirer": "^13.3.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.31.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.6.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "standard-version": "^9.5.0",
     "tsup": "^8.5.0",
+    "typescript-eslint": "^8.38.0",
     "typescript": "^5.9.3"
   }
 }

@@ -1,0 +1,12 @@
+# 构建产物不参与格式化。
+dist
+# 第三方依赖不应被改写。
+node_modules
+# Husky 内部生成目录不处理。
+.husky/_
+# 脚手架模板目录按你的要求整体跳过。
+templates
+# 锁文件避免被 Prettier 改写产生无意义 diff。
+pnpm-lock.yaml
+# 模板里的锁文件同样跳过。
+templates/pnpm-lock.yaml
